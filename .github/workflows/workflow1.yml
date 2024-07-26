@@ -4,22 +4,22 @@ jobs:
   lint-test-build:
     runs-on: ubuntu-latest
     steps:
-      - Retrieve code
+      - name: Retrieve code
         uses: actions/checkout@v4
 
-      - Install NodeJS
+      - name: Install NodeJS
         uses: actions/setup-node@v4
         with:
           node-version: '14'
 
-      - Install dependencies        
+      - name: Install dependencies        
         run: npm install
 
-      - Lint code
+      - name: Lint code
         run: npm run lint
 
-      - Test code
+      - name: Test code
         run: npm run test
 
-      - Build code
+      - name: Build code
         run: npm run build 
