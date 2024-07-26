@@ -1,0 +1,8 @@
+name: workflow2
+on: issues
+jobs:
+  display-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo issue info
+        run: echo "${{ toJSON(github) }}"

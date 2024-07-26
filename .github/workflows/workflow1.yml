@@ -1,0 +1,25 @@
+name: workflow1
+on: push
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - Retrieve code
+        uses: actions/checkout@v4
+
+      - Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+
+      - Install dependencies        
+        run: npm install
+
+      - Lint code
+        run: npm run lint
+
+      - Test code
+        run: npm run test
+
+      - Build code
+        run: npm run build 
